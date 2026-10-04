@@ -52,15 +52,18 @@
 
 <section class="section" style="padding-top:0;border-top:0">
   <div class="wrap split">
-    <form class="form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <div>
+    <div class="fs-success" data-fs-success role="status" aria-live="polite"><strong>Request received.</strong> Thank you. We will review it and reply to schedule a short scoping call.</div>
+    <div class="fs-error" data-fs-error role="alert"></div>
+    <form class="form" id="contact-form" action="https://formspree.io/f/mjygbznk" method="POST">
       <div class="field-pair">
-        <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
-        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required data-fs-field><span class="fs-field-error" data-fs-error="name"></span></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required data-fs-field><span class="fs-field-error" data-fs-error="email"></span></div>
       </div>
-      <div class="field"><label for="org">Organization and role</label><input id="org" name="organization" type="text" autocomplete="organization"></div>
+      <div class="field"><label for="org">Organization and role</label><input id="org" name="organization" type="text" autocomplete="organization" data-fs-field></div>
       <div class="field">
         <label for="need">What do you need?</label>
-        <select id="need" name="need" required>
+        <select id="need" name="need" required data-fs-field>
           <option value="" disabled selected>Select one</option>
           <option>Training or course</option>
           <option>Custom course development</option>
@@ -69,15 +72,22 @@
           <option>Something else</option>
         </select>
       </div>
-      <div class="field"><label for="goal">What are you trying to accomplish?</label><textarea id="goal" name="message" required></textarea></div>
+      <div class="field"><label for="goal">What are you trying to accomplish?</label><textarea id="goal" name="message" required data-fs-field></textarea><span class="fs-field-error" data-fs-error="message"></span></div>
       <div class="field-pair">
-        <div class="field"><label for="size">Team size, if training</label><input id="size" name="team_size" type="text"></div>
-        <div class="field"><label for="when">Target timeline</label><input id="when" name="timeline" type="text"></div>
+        <div class="field"><label for="size">Team size, if training</label><input id="size" name="team_size" type="text" data-fs-field></div>
+        <div class="field"><label for="when">Target timeline</label><input id="when" name="timeline" type="text" data-fs-field></div>
       </div>
+      <input type="hidden" name="_subject" value="New request from digitalrecon.solutions">
       <div class="hp" aria-hidden="true"><label>Leave blank<input name="_gotcha" type="text" tabindex="-1" autocomplete="off"></label></div>
-      <button class="btn" type="submit">Send request</button>
+      <button class="btn" type="submit" data-fs-submit-btn>Send request</button>
       <p class="form-note">We reply within <span class="todo">[1&ndash;2 business days]</span> to schedule a short scoping call. Please do not include sensitive or classified information in this form.</p>
     </form>
+    </div>
+    <script>
+      window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+      formspree('initForm', { formElement: '#contact-form', formId: 'mjygbznk' });
+    </script>
+    <script src="vendor/formspree-ajax.js" defer></script>
 
     <aside class="panel" aria-label="Direct contact details">
       <div class="panel-bar"><span>drs/direct</span><span>Digital Recon Solutions LLC</span></div>
