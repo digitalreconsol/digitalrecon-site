@@ -239,7 +239,7 @@ p { margin: 0 0 1.1rem; max-width: 68ch; }
 @media (max-width: 720px) { .row { grid-template-columns: 1fr; gap: 0.4rem; } }
 
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
-@media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { .split { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---------- To-do markers (remove before publishing) ---------- */
 
@@ -519,3 +519,8 @@ body .fs-success[data-fs-active] { border-left: 2px solid var(--amber); }
 body .fs-error[data-fs-active] { border-left: 2px solid #d9695f; }
 body .fs-field-error[data-fs-active] { display: block; color: #e58a80; background: none; border: 0; padding: 0; margin: 0; font-size: 0.85rem; }
 .field-pair { align-items: start; }
+
+/* mobile: keep form within viewport */
+.form, .field, .field-pair > * { min-width: 0; }
+.field input, .field select, .field textarea { max-width: 100%; box-sizing: border-box; }
+dd, dd a { overflow-wrap: anywhere; }
