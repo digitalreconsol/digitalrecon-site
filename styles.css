@@ -533,3 +533,9 @@ dd, dd a { overflow-wrap: anywhere; }
 @media (min-width: 601px) { .btn-row .btn { white-space: nowrap; text-align: center; } }
 /* long titles and URLs wrap instead of widening the page */
 .row, .row > *, .src-rows a, h1, h2, h3, p, li { overflow-wrap: anywhere; min-width: 0; }
+
+/* homepage credibility line and panel links */
+.cred { font-family: var(--font-mono); font-size: 0.85rem; color: var(--sage); margin: 1.1rem 0 0; max-width: 34rem; line-height: 1.55; }
+.panel-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; margin: 0.9rem 0 0; font-family: var(--font-mono); font-size: 0.8rem; }
+.panel-links a { color: var(--amber); text-decoration: none; border-bottom: 1px solid transparent; }
+.panel-links a:hover { border-bottom-color: var(--amber); }
