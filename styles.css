@@ -524,3 +524,15 @@ body .fs-field-error[data-fs-active] { display: block; color: #e58a80; backgroun
 .form, .field, .field-pair > * { min-width: 0; }
 .field input, .field select, .field textarea { max-width: 100%; box-sizing: border-box; }
 dd, dd a { overflow-wrap: anywhere; }
+
+/* equal-width, aligned buttons on small screens */
+@media (max-width: 600px) {
+  .btn-row { flex-direction: column; align-items: stretch; }
+  .btn-row .btn { width: 100%; box-sizing: border-box; text-align: center; justify-content: center; }
+}
+@media (min-width: 601px) {
+  .btn-row { display: inline-grid; grid-auto-flow: column; grid-auto-columns: 1fr; }
+  .btn-row .btn { text-align: center; }
+}
+/* long titles and URLs wrap instead of widening the page */
+.row, .row > *, .src-rows a, h1, h2, h3, p, li { overflow-wrap: anywhere; min-width: 0; }
